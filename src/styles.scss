@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  scroll-behavior: smooth;
+
+  // Opcional: Evita que o topo da seção fique colado ou escondido atrás de um Header Fixo
+  scroll-padding-top: 80px;
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}

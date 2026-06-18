@@ -1,0 +1,50 @@
+<header class="main-header">
+  <div class="header-container">
+
+    <a href="#inicio" class="logo">
+      Marcelo Rodrigues
+    </a>
+
+    <nav class="nav-menu">
+      <a href="#inicio" class="nav-link">{{ langService.text().navHome }}</a>
+      <a href="#sobre" class="nav-link">{{ langService.text().navAbout }}</a>
+      <a href="#projetos" class="nav-link">{{ langService.text().navProjects }}</a>
+    </nav>
+
+    <div class="actions-wrapper">
+
+      <div class="lang-selector">
+        <button
+          (click)="changeLanguage('pt')"
+          [class.active]="langService.getLanguage() === 'pt'"
+          class="lang-btn"
+          aria-label="Mudar para Português"
+        >
+          <img src="https://flagcdn.com/br.svg" alt="Brasil" class="flag-img" />
+        </button>
+
+        <button
+            (click)="changeLanguage('en')"
+            [class.active]="langService.getLanguage() === 'en'"
+            class="lang-btn"
+            aria-label="Switch to English"
+        >
+        <img src="https://flagcdn.com/us.svg" alt="United States" class="flag-img" />
+        </button>
+      </div>
+
+      <button (click)="modalService.open()" class="cta-button">
+        <span class="contact-text">
+          {{ langService.text().navCta }}
+        </span>
+        <span class="arrow-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+          </svg>
+        </span>
+      </button>
+
+    </div>
+
+  </div>
+</header>

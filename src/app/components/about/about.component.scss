@@ -1,0 +1,192 @@
+// Definição de variáveis locais de cor (estilo premium)
+$color-dark: #111111;
+$color-text-muted: #666666;
+$color-gray-bg: #f9fafb;
+$color-border-light: #f1f1f1;
+$color-teal: #4EDFFC;
+
+.about-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  // Reduz os espaçamentos superiores e inferiores em telas menores
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .about-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+
+    // Ajuste em telas de notebooks pequenos e tablets deitados
+    @media (max-width: 1200px) {
+      gap: 40px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column; // Mantido o fluxo natural (Texto em cima, Cards embaixo) para melhor usabilidade de leitura
+      align-items: center;
+      gap: 48px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 16px; // Encaixe fino para telas bem estreitas
+    }
+  }
+
+  // Coluna Esquerda: Grid de Cards
+  .about-highlights {
+    flex: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    // Melhora o comportamento em tablets: se a tela está empilhada, os cards ganham mais área lateral
+    @media (max-width: 1024px) {
+      max-width: 800px;
+    }
+
+    // Passa para coluna única um pouco antes (no padrão de celulares corporativos e phablets)
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  .highlight-card {
+    background-color: $color-gray-bg;
+    border: 1px solid $color-border-light;
+    padding: 32px 24px;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @media (max-width: 480px) {
+      padding: 24px 20px; // Reduz sutilmente o recuo interno para o texto não ficar espremido no celular
+    }
+
+    &:hover {
+      background-color: #ffffff;
+      border-color: $color-dark;
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-icon {
+      color: $color-dark;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        display: block;
+      }
+    }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: $color-dark;
+      margin: 0 0 10px 0;
+    }
+
+    .card-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: $color-text-muted;
+      margin: 0;
+    }
+  }
+
+  // Coluna Direita: Conteúdo de Texto
+  .about-content {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (max-width: 1024px) {
+      max-width: 100%; // O texto ocupa a largura confortável da tela do tablet/celular
+      align-items: center;
+      text-align: center; // Centraliza a leitura quando o layout vira coluna única
+    }
+  }
+
+  .section-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    background-color: $color-gray-bg;
+    padding: 6px 14px;
+    border-radius: 100px;
+    width: fit-content;
+    border: 1px solid $color-border-light;
+  }
+
+  .about-title {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4.5vw, 44px); // Ajustado o mínimo de 32px para 28px para evitar quebras feias em telas pequenas
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    color: $color-dark;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      letter-spacing: -1px; // Suaviza o aperto das letras no celular
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #111111 30%, $color-text-muted 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .about-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    @media (max-width: 1024px) {
+      align-items: center; // Garante alinhamento central se houver elementos internos flex
+    }
+  }
+
+  .about-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-text-muted;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 15px; // Texto sutilmente menor para aumentar o conforto de leitura no smartphone
+    }
+
+    strong {
+      color: $color-dark;
+      font-weight: 600;
+    }
+  }
+}

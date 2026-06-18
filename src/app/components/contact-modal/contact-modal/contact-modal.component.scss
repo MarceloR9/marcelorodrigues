@@ -1,0 +1,177 @@
+$color-overlay: rgba(0, 0, 0, 0.6);
+$color-card-bg: #ffffff;
+$color-dark: #111111;
+$color-muted: #666666;
+$color-border: #f1f1f1;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-overlay;
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto; // Garante que se o celular estiver deitado (landscape), o usuário consiga rolar o modal
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
+}
+
+.modal-card {
+  background-color: $color-card-bg;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 32px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalAppear 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: calc(100vh - 40px); // Evita estouro de tela vertical
+  overflow-y: auto; // Scroll interno caso o conteúdo exceda telas pequenas
+
+  @media (max-width: 480px) {
+    padding: 32px 20px; // Reduz margens internas no celular para aproveitar espaço
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 8px; // Área de clique expandida para fechar facilmente no mobile
+
+  &:hover {
+    color: $color-dark;
+  }
+}
+
+.modal-header {
+  margin-bottom: 32px;
+  padding-right: 20px; // Evita que o título invada a área física do botão de fechar
+
+  @media (max-width: 480px) {
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: $color-dark;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 480px) {
+      font-size: 21px;
+    }
+  }
+
+  p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: $color-muted;
+    margin: 0;
+  }
+}
+
+.modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  @media (max-width: 480px) {
+    padding: 16px 18px; // Formato mais anatômico no smartphone
+    gap: 16px;
+  }
+
+  .option-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .option-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    span {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+    }
+  }
+
+  &.whatsapp {
+    .option-icon, h4 { color: #25D366; }
+    span { color: #7f8c8d; }
+    &:hover {
+      background-color: rgba(#25D366, 0.05);
+      border-color: #25D366;
+      transform: translateY(-2px);
+
+      @media (max-width: 1024px) {
+        transform: none; // Desativa elevação mecânica no celular
+      }
+    }
+  }
+
+  &.gmail {
+    .option-icon, h4 { color: #EA4335; }
+    span { color: #7f8c8d; }
+    &:hover {
+      background-color: rgba(#EA4335, 0.05);
+      border-color: #EA4335;
+      transform: translateY(-2px);
+
+      @media (max-width: 1024px) {
+        transform: none;
+      }
+    }
+  }
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

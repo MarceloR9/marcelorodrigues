@@ -1,0 +1,75 @@
+$color-dark: #111111;
+$color-green-neon: #A7FF3B;
+
+.ticker-wrapper {
+  background-color: $color-dark;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 0; // Reduzido de 20px para uma esteira mais elegante
+  border-top: 1px solid rgba(255, 255, 255, 0.1);    // Corrigido de border-y
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); // Corrigido de border-y
+  display: flex;
+  align-items: center;
+
+  .ticker-track {
+    display: flex;
+    width: max-content;
+  }
+
+  .ticker-group {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-right: 32px;
+    animation: scrollTicker 25s linear infinite;
+    will-change: transform;
+
+    @media (max-width: 768px) {
+      gap: 24px;
+      padding-right: 24px;
+    }
+
+    span {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 18px; // Reduzido de 20px para não ficar gigante no celular
+      color: #ffffff;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      text-transform: uppercase;
+
+      @media (max-width: 480px) {
+        font-size: 15px; // Tamanho ideal para smartphones menores
+        letter-spacing: 1px;
+      }
+    }
+
+    .star {
+      color: $color-green-neon;
+      font-size: 16px;
+
+      @media (max-width: 480px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // Remove a pausa ao passar o mouse em telas touch para evitar comportamento travado no scroll do dedo
+  @media (min-width: 1025px) {
+    &:hover {
+      .ticker-group {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+@keyframes scrollTicker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

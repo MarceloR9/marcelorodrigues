@@ -1,0 +1,60 @@
+<section id="inicio" class="hero-section">
+  <div class="hero-container">
+
+    <!-- Coluna de Texto (Esquerda) -->
+    <div class="hero-content">
+      <h1 class="hero-title">
+        {{ langService.text().heroTitle }} <br>
+        <span class="highlight">{{ langService.text().heroTitleHighlight }}</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        {{ langService.text().heroSubtitle }}
+      </p>
+
+      <!-- Botão de Chamada para Ação (CTA) -->
+      <div class="hero-actions-container">
+
+        <button (click)="modalService.open()" class="hero-actions">
+          <span class="btn-text">
+            @if (langService.text().viewCode === 'View Code') {
+              Contact Me
+            } @else {
+              Contate-me
+            }
+          </span>
+          
+          <span class="arrow-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg>
+          </span>
+        </button>
+
+      </div>
+
+      <!-- Rodapé Técnico Ampliado com JavaScript, React e Git -->
+      <div class="hero-tech-footer">
+        <div class="tech-text">{{ langService.text().heroStack }}</div>
+        <div class="tech-icons-box">
+          <i class="devicon-dotnetcore-plain dotnet-icon"></i>
+          <i class="devicon-csharp-plain csharp-icon"></i>
+          <i class="devicon-javascript-plain js-icon"></i>
+          <i class="devicon-angular-plain angular-icon"></i>
+          <i class="devicon-react-original react-icon"></i>
+          <i class="devicon-microsoftsqlserver-plain sql-icon"></i>
+          <i class="devicon-git-plain git-icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coluna de Mídia (Direita) -->
+    <div class="hero-media">
+      <div class="backdrop-gradient"></div>
+      <div class="image-wrapper">
+        <img src="images/foto1.PNG" alt="Marcelo Rodrigues no show do Oasis" class="hero-avatar">
+      </div>
+    </div>
+
+  </div>
+</section>

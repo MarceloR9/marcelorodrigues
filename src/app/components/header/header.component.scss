@@ -1,0 +1,217 @@
+$color-dark: #111111;
+$color-gray-text: #666666;
+$color-gray-light: #f3f4f6;
+$color-border: #f1f1f1;
+$color-white-translucent: rgba(255, 255, 255, 0.8);
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: $color-white-translucent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border;
+  z-index: 50;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    height: 70px;
+  }
+
+  .header-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 480px) {
+      padding: 0 16px;
+    }
+  }
+
+  .logo {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: -1px;
+    color: $color-dark;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-gray-text;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $color-dark;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: $color-dark;
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+
+  .actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 480px) {
+      gap: 12px;
+    }
+  }
+
+  // Bloco do Seletor Atualizado para as Bandeiras
+  .lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-right: 1px solid #e5e7eb;
+    padding-right: 24px;
+
+    @media (max-width: 768px) {
+      padding-right: 16px;
+      gap: 8px;
+    }
+
+    @media (max-width: 480px) {
+      padding-right: 12px;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      opacity: 0.4; // Apaga de forma elegante o idioma não selecionado
+
+      &:hover {
+        opacity: 0.8;
+        transform: scale(1.15);
+      }
+
+      &.active {
+        opacity: 1; // Brilho total na bandeira ativa
+        transform: scale(1.1);
+      }
+    }
+
+    .flag-img {
+      width: 24px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+      @media (max-width: 480px) {
+        width: 20px;
+        height: 14px;
+      }
+    }
+  }
+
+  .cta-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $color-dark;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    @media (max-width: 768px) {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 8px 12px;
+      gap: 4px;
+    }
+
+    &:hover {
+      background-color: #222222;
+
+      .arrow-icon {
+        transform: translateX(2px);
+      }
+    }
+
+    .arrow-icon {
+      background-color: rgba(255, 255, 255, 0.2);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+
+      @media (max-width: 480px) {
+        width: 18px;
+        height: 18px;
+      }
+
+      svg {
+        display: block;
+        @media (max-width: 480px) {
+          width: 11px;
+          height: 11px;
+        }
+      }
+    }
+  }
+}

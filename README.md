@@ -1,27 +1,41 @@
-# MarceloRodrigues
+# 🚀 Premium Developer Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+Uma aplicação de portfólio moderna, performática e totalmente responsiva desenvolvida em **Angular** (Standalone Components). O projeto foi construído do zero com foco em arquitetura escalável de estilos (SCSS), acessibilidade, experiência do usuário (UX mobile-first) e internacionalização nativa.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🛠️ Tecnologias e Ferramentas
 
-## Code scaffolding
+### Front-End
+* **Angular** (Componentes Standalone e Injeção de Dependência moderna)
+* **TypeScript** (Tipagem estática e segurança no desenvolvimento)
+* **SCSS / SASS** (Arquitetura modular, variáveis globais e estruturação ágil)
+* **SVG Integrations** (Imagens de bandeiras ultra-leves para otimização de performance e compatibilidade global)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Meu Ecossistema Técnico Principal
+Embora este portfólio seja focado no ecossistema front-end para exibição dos meus projetos, minha atuação profissional e proficiência técnica abrangem:
+* **Back-End:** .NET, C# e construção de APIs robustas
+* **Bancos de Dados:** SQL Server
+* **Front-End:** Angular e React
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 💎 Diferenciais Técnicos do Projeto
 
-## Running unit tests
+* **Zero Layout Break:** Estrutura de CSS/SCSS blindada contra quebras de layout usando dimensionamento fluido e flexbox/grid responsivos de ponta a ponta.
+* **Mobile-First & Acessibilidade:** Botões, modais e seletores otimizados com áreas de toque expandidas para navegação confortável em smartphones.
+* **Internacionalização (i18n):** Sistema de troca de idiomas em tempo real (PT/EN) gerenciado de forma reativa através de serviços injetados do Angular.
+* **Performance Premium:** Uso de imagens SVG leves e efeito de desfoque nativo (`backdrop-filter`) para manter o carregamento instantâneo.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 📦 Como Executar o Projeto Localmente
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Pré-requisitos
+Certifique-se de ter o **Node.js** e o **Angular CLI** instalados em sua máquina.
 
-## Further help
+### Passos para Instalação
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clonar o repositório:**
+   ```bash
+   git clone [https://github.com/MarceloR9/marcelorodrigues.git](https://github.com/MarceloR9/marcelorodrigues.git)

@@ -1,0 +1,282 @@
+// Variáveis de cor do design premium
+$color-dark: #111111;
+$color-text-muted: #666666;
+$color-teal: #4EDFFC;
+$color-green: #A7FF3B;
+$color-border-light: #f1f1f1;
+
+.hero-section {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding-top: 100px; // Reduz o espaço do topo no celular devido ao header menor
+    padding-bottom: 40px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .hero-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 48px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 16px;
+    }
+  }
+
+  // Coluna da Esquerda: Textos e Informações
+  .hero-content {
+    flex: 1.2;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (max-width: 1024px) {
+      align-items: center;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      gap: 20px;
+    }
+  }
+
+  .hero-title {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(34px, 5vw, 54px); // Título perfeitamente fluido de 34px a 54px
+    line-height: 1.15;
+    letter-spacing: -2px;
+    color: $color-dark;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      letter-spacing: -1px;
+    }
+
+    .highlight {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: rgba($color-green, 0.5);
+        z-index: -1;
+        border-radius: 4px;
+
+        @media (max-width: 480px) {
+          height: 8px; // Barra de destaque mais fina no celular
+          bottom: 2px;
+        }
+      }
+    }
+  }
+
+  .hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(15px, 2vw, 18px); // Escala o subtítulo confortavelmente
+    line-height: 1.6;
+    color: $color-text-muted;
+    margin: 0;
+  }
+
+  .hero-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: $color-teal;
+    color: $color-dark;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 100px;
+    box-shadow: 0 10px 25px rgba($color-teal, 0.3);
+    transition: all 0.3s ease;
+    width: fit-content;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      padding: 14px 28px;
+    }
+
+    @media (max-width: 480px) {
+      width: 100%; // Botão principal ocupa a largura inteira no celular para facilitar o clique
+    }
+
+    &:hover {
+      background-color: $color-dark;
+      color: #ffffff;
+      transform: translateY(-2px);
+
+      .arrow-circle {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      @media (max-width: 1024px) {
+        transform: none; // Previne bugs visuais de hover no touch
+      }
+    }
+
+    .btn-text {
+      background: transparent;
+      border: none;
+      padding: 0;
+      color: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+    }
+
+    .arrow-circle {
+      background-color: rgba(0, 0, 0, 0.05);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+
+      svg {
+        display: block;
+      }
+    }
+  }
+
+  // Bloco de tecnologias responsivo
+  .hero-tech-footer {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid $color-border-light;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      align-items: center;
+    }
+
+    .tech-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #888888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .tech-icons-box {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      @media (max-width: 1024px) {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      i {
+        font-size: 32px; // Sutilmente menor para acomodar em telas de celulares menores
+        display: inline-block;
+        line-height: 1;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+
+        @media (max-width: 480px) {
+          font-size: 28px; // Evita quebrar em mais de duas linhas no mobile antigo
+        }
+      }
+
+      .dotnet-icon { color: #512bd4; }
+      .csharp-icon { color: #239120; }
+      .js-icon     { color: #f7df1e; }
+      .angular-icon{ color: #dd0031; }
+      .react-icon  { color: #61dafb; }
+      .sql-icon    { color: #cc292b; }
+      .git-icon    { color: #f05032; }
+    }
+  }
+
+  // Coluna da Direita: Moldura da Imagem Limpa
+  .hero-media {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px; // Reduzido sutilmente de 440px para perfeito equilíbrio visual
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      max-width: 320px; // Tamanho ideal para tablet e celular sem poluir o espaço visual
+    }
+  }
+
+  .backdrop-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba($color-teal, 0.15) 0%, rgba($color-green, 0.15) 100%);
+    border-radius: 32px;
+    transform: rotate(-3deg) scale(0.98);
+    z-index: 1;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #f9fafb;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+
+    .hero-avatar {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

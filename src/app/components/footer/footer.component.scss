@@ -1,0 +1,129 @@
+$color-dark-bg: #111111;
+$color-text-light: #ffffff;
+$color-text-muted: #666666;
+$color-border-dark: #222222;
+$color-teal: #4EDFFC;
+
+.footer-section {
+  display: block; // Crucial para o Angular não encolher o componente wrapper
+  background-color: $color-dark-bg;
+  padding: 40px 0; // Reduzido sutilmente de 50px
+  border-top: 1px solid $color-border-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 32px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 16px;
+      gap: 28px;
+    }
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: $color-text-light;
+    letter-spacing: -0.5px;
+  }
+
+  .footer-copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: $color-text-muted;
+    margin: 0;
+  }
+
+  .footer-center {
+    display: flex;
+    @media (max-width: 768px) {
+      order: -1; // Joga o menu de links para cima no mobile, melhorando a hierarquia visual
+    }
+  }
+
+  .footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 28px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    a {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #aaaaaa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      padding: 4px 0; // Ganho invisível na área do toque
+
+      &:hover {
+        color: $color-text-light;
+      }
+    }
+  }
+
+  .footer-right {
+    display: flex;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 16px;
+
+    a {
+      color: #aaaaaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; // Expandido de 40px para atingir o padrão ideal de acessibilidade mobile
+      height: 44px;
+      border: 1px solid $color-border-dark;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $color-dark-bg;
+        background-color: $color-teal;
+        border-color: $color-teal;
+        transform: translateY(-2px);
+
+        @media (max-width: 1024px) {
+          transform: none; // Evita retenção de estado de hover no touch
+        }
+      }
+    }
+  }
+}

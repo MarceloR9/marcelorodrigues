@@ -1,0 +1,115 @@
+$color-dark-bg: #111111;
+$color-text-light: #ffffff;
+$color-text-muted: #888888;
+$color-teal: #4EDFFC;
+
+.cta-banner-section {
+  display: block;
+  padding: 100px 0; // Reduzido de 120px para otimização de espaço mobile
+  background-color: $color-dark-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .cta-banner-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 32px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 16px;
+    }
+  }
+
+  .cta-banner-text {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(26px, 4.5vw, 42px); // Escala lindamente sem quebrar layouts
+    letter-spacing: -1.5px;
+    line-height: 1.25;
+    color: $color-text-light;
+    margin: 0;
+    max-width: 850px;
+
+    @media (max-width: 768px) {
+      letter-spacing: -1px;
+    }
+  }
+
+  .cta-banner-action {
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 100%; // Container se expande no mobile
+    }
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: $color-dark-bg;
+    background-color: $color-text-light;
+    text-decoration: none;
+    padding: 18px 36px;
+    border-radius: 100px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+
+    @media (max-width: 768px) {
+      width: 100%; // O botão vira bloco completo para clique facilitado
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      background-color: $color-teal;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba($color-teal, 0.2);
+
+      svg {
+        transform: translateX(4px);
+      }
+
+      @media (max-width: 1024px) {
+        transform: none; // Desativa elevação física no mobile
+        box-shadow: none;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+}
