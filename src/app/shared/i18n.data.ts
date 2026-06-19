@@ -5,7 +5,7 @@ export const translations = {
     navProjects: 'Portfólio',
     navContact: 'Contato',
     navCta: 'Contate',
-    heroTitle: 'Desenvolvedor Full Stcack',
+    heroTitle: 'Desenvolvedor Full Stack',
     heroTitleHighlight: '.NET & Angular e Arquitetura de APIs',
     heroSubtitle: 'Criando ecossistemas web e APIs escaláveis com domínio técnico focado em .NET Core e Angular.',
     heroCta: 'Contate-me!',

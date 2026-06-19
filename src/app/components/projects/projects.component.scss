@@ -203,8 +203,10 @@ $color-teal: #4EDFFC;
       grid-template-columns: repeat(2, 1fr);
     }
     @media (max-width: 640px) {
-      grid-template-columns: 1fr;
-      gap: 16px; // Reduz ligeiramente o espaço vertical entre os cards no celular
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
     }
   }
 

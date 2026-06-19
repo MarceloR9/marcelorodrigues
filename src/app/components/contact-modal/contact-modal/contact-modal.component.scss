@@ -8,15 +8,15 @@ $color-border: #f1f1f1;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   background-color: $color-overlay;
   backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
   overflow-y: auto; // Garante que se o celular estiver deitado (landscape), o usuário consiga rolar o modal
 
   @media (max-width: 480px) {
@@ -33,8 +33,9 @@ $color-border: #f1f1f1;
   position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   animation: modalAppear 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  max-height: calc(100vh - 40px); // Evita estouro de tela vertical
-  overflow-y: auto; // Scroll interno caso o conteúdo exceda telas pequenas
+  max-height: min(calc(100vh - 48px), calc(100dvh - 48px));
+  overflow-y: auto;
+  box-sizing: border-box;
 
   @media (max-width: 480px) {
     padding: 32px 20px; // Reduz margens internas no celular para aproveitar espaço
